@@ -2,83 +2,89 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0D0D0D">
 
     <!-- TÍTULO -->
+
+    <!-- EMAIL -->
+
+    <!-- PASSWORD -->
+
+    <!-- BOTÓN LOGIN -->
+
+    <!-- REGISTRO -->
+
     <TextView
-        android:id="@+id/txtTitulo"
+        android:id="@+id/Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ArtiCloud"
+        android:layout_margin="20dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/articloud"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="20dp"/>
-
-    <!-- EMAIL -->
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"
-        android:background="#1A1A1A"
-        android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/txtTitulo"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
-
-    <!-- PASSWORD -->
-    <EditText
-        android:id="@+id/edtPass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"
-        android:background="#1A1A1A"
-        android:padding="12dp"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/edtEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- BOTÓN LOGIN -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
-        android:textColor="#000000"
-        android:backgroundTint="#D4AF37"
-        app:layout_constraintTop_toBottomOf="@id/edtPass"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#D4AF37"
+        android:text="@string/inicio_de_sesion"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="379dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
-    <!-- REGISTRO -->
     <TextView
         android:id="@+id/txtRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿No tienes cuenta? Regístrate"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/no_tienes_cuenta_registrate"
         android:textColor="#007BFF"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="178dp"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_person_pin_24"
+            android:hint="@string/txtusuario"
+            tools:ignore="RtlHardcoded" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="270dp"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/outline_admin_panel_settings_24"
+            android:hint="@string/txtcontraseña"
+            tools:ignore="RtlHardcoded" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,11 @@
     <string name="app_name">Articloud</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtcontraseña">Contraseña</string>
+    <string name="txtusuario">Usuario</string>
+    <string name="txttitulo">Arti Cloud</string>
+    <string name="txtiniciosesion">Iniciar Sesion</string>
+    <string name="articloud">ArtiCloud</string>
+    <string name="inicio_de_sesion">Inicio de Sesion</string>
+    <string name="no_tienes_cuenta_registrate">¿No tienes cuenta? Regístrate</string>
 </resources>

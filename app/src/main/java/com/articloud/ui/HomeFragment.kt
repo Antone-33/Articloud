@@ -13,6 +13,7 @@ import com.articloud.adapter.ArtworkAdapter
 import com.articloud.databinding.FragmentHomeBinding
 import com.articloud.model.Artwork
 import com.bumptech.glide.Glide
+import androidx.core.view.ViewCompat
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,7 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
