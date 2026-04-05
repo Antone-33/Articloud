@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Perfil"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
                 android:backgroundTint="#D4AF37"
                 android:gravity="center"
                 android:text="A"
-                android:textColor="#000000"
+                android:textColor="#333333"
                 android:textSize="28sp" />
 
             <!-- NOMBRE -->
@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Usuario Invitado"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="correo@ejemplo.com"
-                android:textColor="#000000" />
+                android:textColor="#FFFFFF"/>
 
             <!-- ESTADÍSTICAS -->
             <LinearLayout
@@ -78,14 +78,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Compras"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFFFF"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,14 +99,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Favoritos"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFFFF" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -114,20 +114,21 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:gravity="center"
+
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Publicaciones"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFFFF"/>
                 </LinearLayout>
             </LinearLayout>
 
