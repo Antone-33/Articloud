@@ -27,7 +27,7 @@ class CartFragment : Fragment() {
 
         _binding = FragmentCartBinding.inflate(inflater, container, false)
 
-        binding.btnLoginCart.setOnClickListener {
+        binding.btnPagar.setOnClickListener {
             startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
 
@@ -38,11 +38,11 @@ class CartFragment : Fragment() {
 
     private fun updateUI() {
         if (SessionManager.isLogged(requireContext())) {
-            binding.layoutGuest.visibility = View.GONE
-            binding.layoutContent.visibility = View.VISIBLE
+            binding.root.visibility = View.GONE
+            binding.root.visibility = View.VISIBLE
         } else {
-            binding.layoutGuest.visibility = View.VISIBLE
-            binding.layoutContent.visibility = View.GONE
+            binding.root.visibility = View.VISIBLE
+            binding.root.visibility = View.GONE
         }
     }
 }
