@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
         // LOGIN
         binding.btnLogin.setOnClickListener {
+
             val email = binding.etUsuario.text.toString()
             val pass = binding.etPassword.text.toString()
             val name = email.substringBefore("@")
@@ -31,8 +32,10 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         }
+
         //ir a registrar
         binding.txtRegistro.setOnClickListener {
+
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
