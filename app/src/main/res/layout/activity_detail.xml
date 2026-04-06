@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- IMAGEN -->
+        <ImageView
+            android:id="@+id/imgDetail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#1A1A1A"/>
+
+        <!-- NOMBRE -->
+        <TextView
+            android:id="@+id/txtNameDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la obra"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+
+        <!-- PRECIO -->
+        <TextView
+            android:id="@+id/txtPriceDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S/ 150"
+            android:textColor="#D4AF37"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"/>
+
+        <!-- DESCRIPCIÓN -->
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción de la obra..."
+            android:textColor="#CCCCCC"
+            android:layout_marginTop="10dp"/>
+
+        <!-- BOTÓN -->
+        <Button
+            android:id="@+id/btnAddCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar al carrito"
+            android:textColor="#000000"
+            android:backgroundTint="#D4AF37"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

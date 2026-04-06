@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear cuenta"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Únete a la comunidad ArtiCloud"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="8dp"/>
+
+        <!-- NOMBRE -->
+        <TextView
+            android:text="NOMBRE COMPLETO"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tu nombre completo"
+            android:textColor="#FFFFFF"
+            android:background="#1A1A1A"
+            android:padding="12dp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- EMAIL -->
+        <TextView
+            android:text="CORREO ELECTRÓNICO"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="tu@correo.com"
+            android:textColor="#FFFFFF"
+            android:background="#1A1A1A"
+            android:padding="12dp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- PASSWORD -->
+        <TextView
+            android:text="CONTRASEÑA"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mínimo 8 caracteres"
+            android:textColor="#FFFFFF"
+            android:background="#1A1A1A"
+            android:padding="12dp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- CONFIRMAR PASSWORD -->
+        <TextView
+            android:text="CONFIRMAR CONTRASEÑA"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repite tu contraseña"
+            android:textColor="#FFFFFF"
+            android:background="#1A1A1A"
+            android:padding="12dp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- CHECKBOX -->
+        <CheckBox
+            android:id="@+id/cbTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acepto los términos y condiciones"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="16dp"/>
+
+        <!-- BOTÓN -->
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear cuenta"
+            android:backgroundTint="#333333"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp"/>
+
+        <!-- LOGIN -->
+        <TextView
+            android:id="@+id/txtLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes cuenta? Inicia sesión"
+            android:textColor="#D4AF37"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</ScrollView>

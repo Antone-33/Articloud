@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- ICONO -->
+    <TextView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="❤"
+        android:textSize="28sp"
+        android:textColor="#D4AF37"
+        android:background="@drawable/bg_circle"/>
+
+    <!-- TITULO -->
+    <TextView
+        android:id="@+id/title"
+        android:text="Guarda tus favoritos"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- DESCRIPCIÓN -->
+    <TextView
+        android:id="@+id/desc"
+        android:text="Inicia sesión para guardar obras"
+        android:textColor="#AAAAAA"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- BOTÓN -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Iniciar sesión"
+        android:backgroundTint="#D4AF37"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

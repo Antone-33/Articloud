@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- FOTO PERFIL -->
+        <TextView
+            android:id="@+id/txtInitial"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="A"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_main"
+            android:background="@drawable/bg_circle"/>
+        <!-- <TextView
+             android:id="@+id/txtAvatar"
+             android:layout_width="80dp"
+             android:layout_height="80dp"
+             android:text="G"
+             android:textSize="28sp"
+             android:textStyle="bold"
+             android:gravity="center"
+             android:textColor="#000000"
+             android:layout_gravity="center"
+             android:background="@drawable/bg_circle"/> -->
+
+         <!-- NOMBRE -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gian Antones"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"/>
+
+        <!-- EMAIL -->
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gian@email.com"
+            android:textColor="#AAAAAA"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"/>
+
+        <!-- SECCIÓN -->
+        <TextView
+            android:text="Configuración"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- OPCIONES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <!-- Mis pedidos -->
+            <TextView
+                android:text="Mis pedidos"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Favoritos -->
+            <TextView
+                android:text="Favoritos"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Métodos de pago -->
+            <TextView
+                android:text="Métodos de pago"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!-- BOTÓN LOGOUT -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar sesión"
+            android:backgroundTint="#D4AF37"
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
