@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.articloud.databinding.ActivityLoginBinding
+import com.articloud.ui.HomeFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
                 SessionManager.saveUser(this, name, email)
 
-                startActivity(Intent(this, ProfileActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
         }

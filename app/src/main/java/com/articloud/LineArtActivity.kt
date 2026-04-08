@@ -27,6 +27,6 @@ class LineArtActivity : AppCompatActivity() {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
             finish()
-        }, 8000)
+        }, 10500)
     }
 }

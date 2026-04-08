@@ -26,7 +26,7 @@ class ProfileActivity : AppCompatActivity() {
 
             SessionManager.logout(this)
 
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
 
@@ -34,6 +34,7 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+
 
     }
 }
