@@ -1,6 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- ===== HEADER OSCURO ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0D0D0D"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_circle_dark"
+                android:gravity="center"
+                android:text="←"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Editar perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bd_gold_button"
+                android:text="✓ Guardar"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <!-- ===== AVATAR ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0D0D0D"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:id="@+id/txtInitial"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_circle"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="#000000"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtEmailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_badge_outline_gold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="✦ Coleccionista Premium"
+                android:textColor="#C8A96A"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <!-- ===== FORMULARIO ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datos personales"
+                android:textColor="#0D0D0D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Email -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="EMAIL" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input_disabled"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="✉" android:textColor="#BBBBBB" android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:id="@+id/txtEmailDisplay"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="#AAAAAA" android:textSize="15sp"/>
+            </LinearLayout>
+
+            <!-- Nombre -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NOMBRE COMPLETO" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="👤" android:textSize="15sp" android:layout_marginEnd="10dp"/>
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="textPersonName"/>
+            </LinearLayout>
+
+            <!-- Teléfono -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="TELÉFONO" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📞" android:textSize="15sp" android:layout_marginEnd="10dp"/>
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null" android:hint="+51 999 888 777"
+                    android:textColor="#0D0D0D" android:textColorHint="#BBBBBB"
+                    android:textSize="15sp" android:inputType="phone"/>
+            </LinearLayout>
+
+            <!-- DNI -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DNI / PASAPORTE" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🪪" android:textSize="15sp" android:layout_marginEnd="10dp"/>
+                <EditText
+                    android:id="@+id/etDni"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null" android:hint="12345678"
+                    android:textColor="#0D0D0D" android:textColorHint="#BBBBBB"
+                    android:textSize="15sp" android:inputType="number"/>
+            </LinearLayout>
+
+            <!-- Dirección -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DIRECCIÓN" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📍" android:textSize="15sp" android:layout_marginEnd="10dp"/>
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null" android:hint="Av. Larco 1234, Miraflores"
+                    android:textColor="#0D0D0D" android:textColorHint="#BBBBBB"
+                    android:textSize="15sp" android:inputType="textPostalAddress"/>
+            </LinearLayout>
+
+            <!-- Ciudad -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CIUDAD" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🏙" android:textSize="15sp" android:layout_marginEnd="10dp"/>
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null" android:hint="Lima"
+                    android:textColor="#0D0D0D" android:textColorHint="#BBBBBB"
+                    android:textSize="15sp" android:inputType="textCapWords"/>
+            </LinearLayout>
+
+            <!-- Biografía -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="BIOGRAFÍA" android:textColor="#888888"
+                android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="100dp"
+                android:background="@drawable/bg_input"
+                android:gravity="top" android:orientation="horizontal"
+                android:paddingHorizontal="14dp" android:paddingVertical="14dp"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/etBio"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="Coleccionista apasionada de arte contemporáneo."
+                    android:textColor="#0D0D0D" android:textColorHint="#BBBBBB"
+                    android:textSize="15sp" android:inputType="textMultiLine"
+                    android:gravity="top" android:maxLines="4"/>
+            </LinearLayout>
+
+            <!-- Pedidos recientes (título) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedidos recientes"
+                android:textColor="#0D0D0D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Pedido ejemplo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="48dp" android:layout_height="48dp"
+                    android:background="#E0E0E0" android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Nebula Dreams" android:textColor="#0D0D0D"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="#AC-2491 · 15 Feb 2025" android:textColor="#888888"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="end">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="S/ 1,200" android:textColor="#0D0D0D"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Entregado" android:textColor="#4CAF50" android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

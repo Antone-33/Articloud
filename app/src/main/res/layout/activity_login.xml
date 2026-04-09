@@ -1,71 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#FFFFFF"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="28dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- ===== LOGO ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ArtiCloud"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"/>
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp">
 
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="ArtiCloud"
+                android:textColor="#0D0D0D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Arte exclusivo para coleccionistas"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- ===== TÍTULO ===== -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Inicia sesión para comprar"
-            android:textColor="#FFFFFF"
+            android:textColor="#0D0D0D"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginBottom="4dp"/>
 
-        <EditText
-            android:id="@+id/etEmail"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accede a tu cuenta y adquiere obras de arte únicas"
+            android:textColor="#888888"
+            android:textSize="13sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- ===== CORREO ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CORREO ELECTRÓNICO"
+            android:textColor="#888888"
+            android:textSize="11sp"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✉"
+                android:textColor="#AAAAAA"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="tu@correo.com"
+                android:textColor="#0D0D0D"
+                android:textColorHint="#BBBBBB"
+                android:textSize="15sp"
+                android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <!-- ===== CONTRASEÑA ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTRASEÑA"
+            android:textColor="#888888"
+            android:textSize="11sp"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒"
+                android:textSize="15sp"
+                android:layout_marginEnd="10dp"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="••••••••"
+                android:textColor="#0D0D0D"
+                android:textColorHint="#BBBBBB"
+                android:textSize="15sp"
+                android:inputType="textPassword"/>
+
+        </LinearLayout>
+
+        <!-- Restablecer contraseña -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="tu@correo.com"
-            android:textColor="#FFFFFF"
-            android:background="#1A1A1A"
-            android:padding="12dp"
-            android:layout_marginTop="20dp"/>
+            android:gravity="end"
+            android:text="Restablecer contraseña"
+            android:textColor="#C8A96A"
+            android:textSize="13sp"
+            android:layout_marginBottom="28dp"/>
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="********"
-            android:textColor="#FFFFFF"
-            android:background="#1A1A1A"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"/>
-
+        <!-- ===== BOTÓN INGRESAR ===== -->
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
+            android:background="@drawable/bd_gold_button"
             android:text="Ingresar"
-            android:backgroundTint="#D4AF37"
             android:textColor="#000000"
-            android:layout_marginTop="20dp"/>
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
 
-        <TextView
-            android:id="@+id/txtRegister"
+        <!-- Divisor "o continúa con" -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¿No tienes cuenta? Regístrate"
-            android:textColor="#D4AF37"
-            android:layout_marginTop="20dp"
-            android:gravity="center"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#E0E0E0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:text="o continúa con"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#E0E0E0"/>
+
+        </LinearLayout>
+
+        <!-- Botones sociales -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
+
+            <Button
+                android:id="@+id/btnGoogle"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_input"
+                android:text="G  Google"
+                android:textColor="#0D0D0D"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/btnFacebook"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_input"
+                android:text="f  Facebook"
+                android:textColor="#0D0D0D"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/btnApple"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_input"
+                android:text="  Apple"
+                android:textColor="#0D0D0D"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <!-- ¿No tienes cuenta? -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿No tienes cuenta? "
+                android:textColor="#888888"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regístrate"
+                android:textColor="#C8A96A"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

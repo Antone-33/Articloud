@@ -1,127 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingBottom="32dp">
 
-        <!-- FOTO PERFIL -->
-        <TextView
-            android:id="@+id/txtInitial"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:gravity="center"
-            android:text="A"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="@color/black_main"
-            android:background="@drawable/bg_circle"/>
-        <!-- <TextView
-             android:id="@+id/txtAvatar"
-             android:layout_width="80dp"
-             android:layout_height="80dp"
-             android:text="G"
-             android:textSize="28sp"
-             android:textStyle="bold"
-             android:gravity="center"
-             android:textColor="#000000"
-             android:layout_gravity="center"
-             android:background="@drawable/bg_circle"/> -->
-
-         <!-- NOMBRE -->
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
+        <!-- ===== HEADER DORADO ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gian Antones"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"/>
+            android:background="#2A2929"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="24dp">
 
-        <!-- EMAIL -->
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="gian@email.com"
-            android:textColor="#AAAAAA"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"/>
+            <!-- Fila: Avatar + Info + Editar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-        <!-- SECCIÓN -->
-        <TextView
-            android:text="Configuración"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <!-- Avatar -->
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp">
 
-        <!-- OPCIONES -->
+                    <TextView
+                        android:id="@+id/txtInitial"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="#000000"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <!-- Nombre + email + badge -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="14dp">
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ana García"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ana@email.com"
+                        android:textColor="#AAAAAA"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_badge_outline_gold"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:text="✦ Coleccionista Premium"
+                        android:textColor="#C8A96A"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <!-- Botón editar -->
+                <TextView
+                    android:id="@+id/btnEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gold_outline"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="✎ Editar"
+                    android:textColor="#C8A96A"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- ===== ESTADÍSTICAS ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <!-- Compras -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtPurchaseCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compras"
+                        android:textColor="#888888"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Divisor -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="#2A2A2A" />
+
+                <!-- Favoritos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFavCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favoritos"
+                        android:textColor="#888888"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Divisor -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="#2A2A2A" />
+
+                <!-- Reseñas -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtReviewCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reseñas"
+                        android:textColor="#888888"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ===== PEDIDOS RECIENTES ===== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:padding="20dp">
 
-            <!-- Mis pedidos -->
             <TextView
-                android:text="Mis pedidos"
-                android:textColor="#FFFFFF"
-                android:padding="12dp"
-                android:background="#1A1A1A"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedidos recientes"
+                android:textColor="#0D0D0D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
 
-            <!-- Favoritos -->
-            <TextView
-                android:text="Favoritos"
-                android:textColor="#FFFFFF"
-                android:padding="12dp"
-                android:background="#1A1A1A"
-                android:layout_marginBottom="8dp"
+            <!-- Pedido 1 -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="10dp">
 
-            <!-- Métodos de pago -->
-            <TextView
-                android:text="Métodos de pago"
-                android:textColor="#FFFFFF"
-                android:padding="12dp"
-                android:background="#1A1A1A"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#E0E0E0"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nebula Dreams"
+                        android:textColor="#0D0D0D"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#AC-2491 · 15 Feb 2025"
+                        android:textColor="#888888"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/ 1,200"
+                        android:textColor="#0D0D0D"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Entregado"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <!-- BOTÓN LOGOUT -->
+        <!-- ===== MENÚ OPCIONES ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <!-- Item menú genérico -->
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuOrders"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuNotifications"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuPayment"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuAddresses"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuReferrals"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuReviews"/>
+            <include layout="@layout/item_profile_menu"
+                android:id="@+id/menuSecurity"/>
+
+        </LinearLayout>
+
+        <!-- ===== BOTÓN CERRAR SESIÓN ===== -->
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_input"
             android:text="Cerrar sesión"
-            android:backgroundTint="#D4AF37"
-            android:textColor="#000000"
-            android:layout_marginTop="30dp"/>
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:backgroundTint="#D4AF37"
-            android:textColor="#000000"
-            android:layout_marginTop="30dp"/>
-
+            android:textColor="#121111"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -1,6 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- ===== HEADER ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D0D0D"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_circle_dark"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Checkout"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View android:layout_width="36dp" android:layout_height="36dp" />
+
+    </LinearLayout>
+
+    <!-- ===== INDICADOR DE PASOS ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D0D0D"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingHorizontal="32dp">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:gravity="center" android:orientation="vertical">
+            <TextView android:id="@+id/step1Circle"
+                android:layout_width="32dp" android:layout_height="32dp"
+                android:background="@drawable/bg_step_active" android:gravity="center"
+                android:text="1" android:textColor="#000000"
+                android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="Envío"
+                android:textColor="#C8A96A" android:textSize="11sp"/>
+        </LinearLayout>
+
+        <View android:id="@+id/line1"
+            android:layout_width="0dp" android:layout_height="2dp" android:layout_weight="1"
+            android:layout_marginHorizontal="8dp" android:layout_marginBottom="16dp"
+            android:background="#333333"/>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:gravity="center" android:orientation="vertical">
+            <TextView android:id="@+id/step2Circle"
+                android:layout_width="32dp" android:layout_height="32dp"
+                android:background="@drawable/bg_step_inactive" android:gravity="center"
+                android:text="2" android:textColor="#888888"
+                android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/step2Label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="Pago"
+                android:textColor="#888888" android:textSize="11sp"/>
+        </LinearLayout>
+
+        <View android:id="@+id/line2"
+            android:layout_width="0dp" android:layout_height="2dp" android:layout_weight="1"
+            android:layout_marginHorizontal="8dp" android:layout_marginBottom="16dp"
+            android:background="#333333"/>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:gravity="center" android:orientation="vertical">
+            <TextView android:id="@+id/step3Circle"
+                android:layout_width="32dp" android:layout_height="32dp"
+                android:background="@drawable/bg_step_inactive" android:gravity="center"
+                android:text="3" android:textColor="#888888"
+                android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/step3Label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="Confirmar"
+                android:textColor="#888888" android:textSize="11sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ===== CONTENIDO SCROLLABLE ===== -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <!-- ✅ UN SOLO LinearLayout hijo directo del NestedScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- PASO 1: DIRECCIÓN -->
+            <LinearLayout
+                android:id="@+id/layoutStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Dirección de entrega" android:textColor="#0D0D0D"
+                    android:textSize="18sp" android:textStyle="bold" android:layout_marginBottom="20dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="NOMBRE COMPLETO" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etFullName"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="Ana García" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="textPersonName" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DNI" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etDni"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="12345678" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="number" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="TELÉFONO" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etPhone"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="+51 999 888 777" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="phone" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DIRECCIÓN" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etAddress"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="Av. Larco 1234" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="textPostalAddress" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="CIUDAD" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etCity"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="Lima" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="textCapWords" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DISTRITO" android:textColor="#888888"
+                    android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/etDistrict"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                    android:hint="Miraflores" android:textColor="#0D0D0D"
+                    android:textColorHint="#BBBBBB" android:textSize="15sp"
+                    android:inputType="textCapWords" android:layout_marginBottom="20dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="#E8F5E9" android:gravity="center_vertical"
+                    android:orientation="horizontal" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🚚" android:textSize="16sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Envío gratis a Lima Metropolitana"
+                        android:textColor="#2E7D32" android:textSize="13sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- PASO 2: PAGO -->
+            <LinearLayout
+                android:id="@+id/layoutStep2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Método de pago" android:textColor="#0D0D0D"
+                    android:textSize="18sp" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+                <LinearLayout android:id="@+id/optionCard"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:background="@drawable/bg_payment_selected"
+                    android:gravity="center_vertical" android:orientation="horizontal"
+                    android:paddingHorizontal="16dp" android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💳" android:textSize="20sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp"
+                        android:text="Tarjeta crédito/débito" android:textColor="#0D0D0D" android:textSize="15sp"/>
+                    <TextView android:id="@+id/checkCard"
+                        android:layout_width="24dp" android:layout_height="24dp"
+                        android:background="@drawable/bg_check_active"
+                        android:gravity="center" android:text="✓"
+                        android:textColor="#FFFFFF" android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/optionTransfer"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:background="@drawable/bg_input"
+                    android:gravity="center_vertical" android:orientation="horizontal"
+                    android:paddingHorizontal="16dp" android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🏦" android:textSize="20sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp"
+                        android:text="Transferencia bancaria" android:textColor="#0D0D0D" android:textSize="15sp"/>
+                    <TextView android:id="@+id/checkTransfer"
+                        android:layout_width="24dp" android:layout_height="24dp"
+                        android:background="@drawable/bg_check_inactive"
+                        android:gravity="center" android:text=""
+                        android:textColor="#FFFFFF" android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/optionYape"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:background="@drawable/bg_input"
+                    android:gravity="center_vertical" android:orientation="horizontal"
+                    android:paddingHorizontal="16dp" android:layout_marginBottom="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📱" android:textSize="20sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp"
+                        android:text="Yape / Plin" android:textColor="#0D0D0D" android:textSize="15sp"/>
+                    <TextView android:id="@+id/checkYape"
+                        android:layout_width="24dp" android:layout_height="24dp"
+                        android:background="@drawable/bg_check_inactive"
+                        android:gravity="center" android:text=""
+                        android:textColor="#FFFFFF" android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/layoutCardData"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="NÚMERO" android:textColor="#888888"
+                        android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etCardNumber"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                        android:hint="4242 4242 4242 4242" android:textColor="#0D0D0D"
+                        android:textColorHint="#BBBBBB" android:textSize="15sp"
+                        android:inputType="number" android:layout_marginBottom="14dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="TITULAR" android:textColor="#888888"
+                        android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etCardName"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                        android:hint="ANA GARCIA" android:textColor="#0D0D0D"
+                        android:textColorHint="#BBBBBB" android:textSize="15sp"
+                        android:inputType="textCapCharacters" android:layout_marginBottom="14dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="8dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="VENC." android:textColor="#888888"
+                                android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                            <EditText android:id="@+id/etExpiry"
+                                android:layout_width="match_parent" android:layout_height="52dp"
+                                android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                                android:hint="12/27" android:textColor="#0D0D0D"
+                                android:textColorHint="#BBBBBB" android:textSize="15sp" android:inputType="number"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="CVV" android:textColor="#888888"
+                                android:textSize="11sp" android:letterSpacing="0.08" android:layout_marginBottom="6dp"/>
+                            <EditText android:id="@+id/etCvv"
+                                android:layout_width="match_parent" android:layout_height="52dp"
+                                android:background="@drawable/bg_input" android:paddingHorizontal="14dp"
+                                android:hint="•••" android:textColor="#0D0D0D"
+                                android:textColorHint="#BBBBBB" android:textSize="15sp" android:inputType="numberPassword"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- PASO 3: CONFIRMACIÓN -->
+            <LinearLayout
+                android:id="@+id/layoutStep3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Confirmar pedido" android:textColor="#0D0D0D"
+                    android:textSize="18sp" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerConfirm"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" android:layout_marginBottom="16dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input" android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Subtotal"
+                            android:textColor="#888888" android:textSize="14sp"/>
+                        <TextView android:id="@+id/confirmSubtotal"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="#0D0D0D" android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Envío"
+                            android:textColor="#888888" android:textSize="14sp"/>
+                        <TextView android:id="@+id/confirmShipping"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="#4CAF50" android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#E0E0E0" android:layout_marginVertical="8dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Total"
+                            android:textColor="#0D0D0D" android:textSize="16sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/confirmTotal"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="#C8A96A" android:textSize="18sp" android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ===== BOTÓN FIJO ABAJO ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bd_gold_button"
+            android:text="Continuar al pago"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
