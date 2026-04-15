@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- ===== ESTADO NO LOGUEADO ===== -->
+    <LinearLayout
+        android:id="@+id/layoutGuest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_circle"
+            android:gravity="center"
+            android:text="♡"
+            android:textColor="#C8A96A"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Guarda tus favoritos"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Inicia sesión para guardar obras y acceder a tu lista desde cualquier dispositivo"
+            android:textColor="#888888"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnLoginFav"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bd_gold_button"
+            android:text="Iniciar sesión"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btnExploreFavGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Seguir explorando →"
+            android:textColor="#C8A96A"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- ===== ESTADO VACÍO (logueado) ===== -->
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♡"
+            android:textColor="#C8A96A"
+            android:textSize="64sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Aún no tienes favoritos"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Toca el ♡ en cualquier obra para guardarla aquí"
+            android:textColor="#888888"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnExploreFavEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bd_gold_button"
+            android:text="Explorar obras"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <!-- ===== ESTADO CON FAVORITOS ===== -->
+    <LinearLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Favoritos"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtFavCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Grid de favoritos -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+
+</FrameLayout>

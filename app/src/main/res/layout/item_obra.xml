@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ❤️ Botón favorito -->
+        <ImageView
+            android:id="@+id/btnFavorito"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_circle_dark"
+            android:padding="6dp"
+            android:src="@android:drawable/btn_star_big_off"
+            app:tint="#FFFFFF" />
+
+        <!-- Imagen de la obra -->
+        <ImageView
+            android:id="@+id/ivObra"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="#F0F0F0"/>
+
+        <!-- Badge categoría -->
+        <TextView
+            android:id="@+id/tvCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_badge_categoria"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:text="Pintura"
+            android:textColor="#0D0D0D"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"/>
+
+        <!-- Info de la obra -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivObra"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título de la obra"
+                android:textColor="#0D0D0D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Línea dorada decorativa -->
+            <View
+                android:layout_width="24dp"
+                android:layout_height="2dp"
+                android:background="#C8A96A"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Precio + botón agregar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Precio -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PRECIO"
+                        android:textColor="#AAAAAA"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.1"/>
+
+                    <TextView
+                        android:id="@+id/tvPrecio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/ 0.00"
+                        android:textColor="#C8A96A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <!-- Botón agregar al carrito -->
+                <LinearLayout
+                    android:id="@+id/btnAgregar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_btn_agregar"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textColor="#0D0D0D"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

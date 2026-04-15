@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:padding="10dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Imagen -->
+    <ImageView
+        android:id="@+id/ivObra"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="#EEEEEE"/>
+
+    <!-- Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:text="Título"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#0D0D0D"
+            android:layout_height="48dp"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPrecio"
+            android:text="S/ 0.00"
+            android:textSize="13sp"
+            android:textColor="#C8A96A"
+            android:layout_marginTop="4dp"
+            android:layout_height="48dp"
+            android:layout_width="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- Eliminar -->
+    <TextView
+        android:id="@+id/btnEliminar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="✕"
+        android:textColor="#E53935"
+        android:textSize="18sp"/>
+
+</LinearLayout>

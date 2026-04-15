@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- ═══════════════════════════════════════
+         APP BAR — header fijo superior
+    ═══════════════════════════════════════ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D0D0D"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Línea dorada superior -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#C8A96A"/>
+
+            <!-- Fila superior: saludo + acciones -->
+
+            <!-- Barra de búsqueda -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingHorizontal="20dp">
+
+                <!-- Saludo izquierda -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.25"
+                        android:text="ARTICLOUD"
+                        android:textColor="#C8A96A"
+                        android:textSize="9sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSaludo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Galería de Arte"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Acciones derecha -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Pedidos -->
+                    <ImageButton
+                        android:id="@+id/btnPedidos"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:src="@android:drawable/ic_menu_recent_history"
+                        app:tint="#888888"
+                        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+                        tools:layout_editor_absoluteX="4dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <!-- Carrito con badge -->
+                    <TextView
+                        android:id="@+id/tvBadgeCarrito"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/bg_badge"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#0D0D0D"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:layout_editor_absoluteX="112dp"
+                        tools:layout_editor_absoluteY="26dp"
+                        tools:ignore="MissingConstraints" />
+
+                    <!-- Logout -->
+                    <ImageButton
+                        android:id="@+id/btnLogout"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        app:tint="#888888"
+                        tools:ignore="ImageContrastCheck,MissingConstraints,SpeakableTextPresentCheck"
+                        tools:layout_editor_absoluteX="100dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <!-- Carrito  -->
+                    <ImageButton
+                        android:id="@+id/btnCarrito"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:src="@android:drawable/ic_menu_add"
+                        app:tint="#FFFFFF"
+                        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#1A1A1A"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Buscar obras..."
+                    android:theme="@style/SearchViewStyle"/>
+
+            </LinearLayout>
+
+            <!-- Chips de categorías -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="#0D0D0D"
+                android:scrollbars="none"
+                android:paddingVertical="8dp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    app:singleSelection="true"
+                    app:chipSpacingHorizontal="8dp">
+
+                    <!-- Chip Todas — siempre visible -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipTodas"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:checked="true"
+                        android:text="Todas"
+                        android:textColor="#0D0D0D"
+                        android:textSize="12sp"
+                        app:chipBackgroundColor="#C8A96A"
+                        app:chipStrokeWidth="0dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ═══════════════════════════════════════
+         CONTENIDO PRINCIPAL
+    ═══════════════════════════════════════ -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Total de obras + loading -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:paddingHorizontal="20dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Cargando obras..."
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.05"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:indeterminateTint="#C8A96A"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+                <!-- Error banner -->
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF3F3"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="Error al cargar"
+                    android:textColor="#E53935"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!-- ── GRID DE OBRAS ── -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerObras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="8dp"
+                    android:clipToPadding="false"/>
+
+                <!-- ── ESTADO VACÍO ── -->
+                <LinearLayout
+                    android:id="@+id/layoutVacio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="60dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎨"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No se encontraron obras"
+                        android:textColor="#0D0D0D"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Intenta con otro término de búsqueda"
+                        android:textColor="#AAAAAA"
+                        android:textSize="13sp"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <!-- Espacio inferior -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"/>
+
+            </LinearLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
